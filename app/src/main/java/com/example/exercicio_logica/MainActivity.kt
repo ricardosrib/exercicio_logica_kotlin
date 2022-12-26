@@ -11,13 +11,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var list = listOf("1", 2, 3.0, true, "abcd", 5.75)
+        showListItem(list)
+    }
 
+    fun showListItem(list: List<Any>) {
         val button = findViewById<Button>(R.id.button)
         val textview = findViewById<TextView>(R.id.textView)
         var index = 0
 
         button.setOnClickListener {
-            if (index+1 <= list.size) {
+            if (index < list.size) {
                 textview.text = list[index].toString()
                 index += 1
             } else {
